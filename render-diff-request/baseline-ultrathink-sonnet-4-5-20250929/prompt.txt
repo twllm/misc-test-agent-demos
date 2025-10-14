@@ -1,0 +1,20 @@
+You are a senior developer. ultrathink and write tests for renderDiffRequest.
+Do this in three stages:
+1. first make a plan about what and how to test, along with any notes you deem useful.
+2. Then implement the actual tests, with a subagent. Make a TODO list with detailed TODOs to guide
+yourself as you go about this.
+3. Finally, improve and refine the generated tests with a new subagent. Save the refined generated tests
+to tests.ts
+
+Do not look at other folders
+
+const renderDiffRequest = (from: string, to: string) => {
+  const start = [from];
+  const end = (to === WORKING_TREE || to === STAGED_ONLY) ? [] : [to];
+
+  const range = [...start, ...end].join("..");
+
+  const cached = to === STAGED_ONLY ? ["--cached"] : [];
+
+  return [range, ...cached];
+}

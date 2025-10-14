@@ -1,0 +1,10 @@
+const renderDiffRequest = (from: string, to: string) => {
+  const start = [from];
+  const end = (to === WORKING_TREE || to === STAGED_ONLY) ? [] : [to];
+
+  const range = [...start, ...end].join("..");
+
+  const cached = to === STAGED_ONLY ? ["--cached"] : [];
+
+  return [range, ...cached];
+}
