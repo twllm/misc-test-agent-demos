@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Text Area Test</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function makeTextArea(content) {
+      return (
+        <textarea
+          defaultValue={content}
+          rows={8}
+          style={{ width: '100%', padding: '8px' }}
+        />
+      )
+    }
+
+    function App() {
+      return (
+        <div style={{ maxWidth: '600px', margin: '20px' }}>
+          <h2>Text Area Test</h2>
+          {makeTextArea('Hello world!')}
+        </div>
+      )
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+  </script>
+</body>
+</html>
